@@ -223,7 +223,7 @@ const onOrderDelete = () => {
             </view>
             <!-- 待收货状态 -->
             <view
-              v-if="order.orderState === OrderState.DaiFaHuo"
+              v-if="order.orderState === OrderState.DaiShouHuo"
               @tap="onOrderConfirm"
               class="button"
               >确认收货</view
@@ -325,7 +325,11 @@ const onOrderDelete = () => {
             再次购买
           </navigator>
           <!-- 待收货状态: 展示确认收货 -->
-          <view class="button primary" v-if="order.orderState === OrderState.DaiShouHuo">
+          <view
+            class="button primary"
+            v-if="order.orderState === OrderState.DaiShouHuo"
+            @tap="onOrderConfirm"
+          >
             确认收货
           </view>
           <!-- 待评价状态: 展示去评价 -->
